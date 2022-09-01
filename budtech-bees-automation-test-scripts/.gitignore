@@ -1,0 +1,9 @@
+temps/
+reports/
+logs/
+.idea/
+.pytest_cache/
+*.pyc
+*.xml
+config/extract.yaml
+files/*.xlsx

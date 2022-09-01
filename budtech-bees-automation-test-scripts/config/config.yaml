@@ -1,0 +1,257 @@
+#配置文件:
+
+#------------------------------------------------------------------------------------------------------------
+#BEES项目
+PROJECT_BBES:
+  #dev环境
+  ENVIRONMENT_DEV:
+    #url
+    BASE_URL:
+      business_entity_service: https://api-gateway-dev.ab-inbev.cn/business-entity-service/
+      bees_user_service: https://api-gateway-dev.ab-inbev.cn/
+      products_service: https://api-gateway-dev.ab-inbev.cn/products-service/
+    #静态token
+    STATIC_TOKEN:
+      bees_console_token_abi: f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9
+      bees_console_token_t1: 1c03c590-c471-4b97-b789-5ddeb658c18f
+      bees_console_token_t2: be1ad4eb-843f-43b1-bc2f-17f1f36f6482
+      bees_m1_token: 79da3a81-25b5-430d-8054-96f47b867e2e
+    #动态token
+    DYNAMIC_TOKEN:
+      bees_console_token_abi:
+        PHONE: 18838989502
+        SMSCODE: 123456
+      bees_console_token_t1:
+        PHONE: 18838989500
+        SMSCODE: 123456
+      bees_console_token_t2:
+        PHONE: 17353360016
+        SMSCODE: 123456
+    #数据库连接
+    MYSQL_CONNECT:
+      HOST: rm-uf6t3m8yo40d5b905go.mysql.rds.aliyuncs.com
+      USER: un_zhaoyawei
+      PASSWD: zhaoyawei@123
+      PORT: 3306
+  #feature-test环境
+  ENVIRONMENT_FEATURE_TEST:
+    #url
+    BASE_URL:
+      business_entity_service: https://bees-server-feature-test.ab-inbev.cn/business-entity-service/
+      bees_user_service: https://bees-server-feature-test.ab-inbev.cn/
+      products_service: https://api-gateway-feature-test.ab-inbev.cn/products-service/
+    #静态token
+    STATIC_TOKEN:
+      bees_console_token_abi: 22cb393b-e611-45b7-90a1-2a809621317a
+      bees_console_token_t1: c34e0f12-c6f9-4600-a93b-210f6374f61b
+      bees_console_token_t2: 78bba925-21ae-43ab-b922-b67b528099a8
+      bees_m1_token: 79da3a81-25b5-430d-8054-96f47b867e2e
+    #动态token
+    DYNAMIC_TOKEN:
+      bees_console_token_abi:
+        userNameOrPhone: WesleyYuan
+        password: WelCome2021%
+      bees_console_token_t1:
+        userNameOrPhone: test002
+        password: Aa123456.
+      bees_console_token_t2:
+        userNameOrPhone: 2Ttest002
+        password: Aa123456.
+    #数据库连接
+    MYSQL_CONNECT:
+      HOST: rm-uf6t3m8yo40d5b905go.mysql.rds.aliyuncs.com
+      USER: srv_mp_aqtest
+      PASSWD: q^ipSOhR%4
+      PORT: 3306
+  #dev环境
+  ENVIRONMENT_FEATURE_5:
+    #url
+    BASE_URL:
+      business_entity_service: https://api-gateway-feature-5.ab-inbev.cn/business-entity-service/
+      bees_user_service: https://api-gateway-feature-5.ab-inbev.cn/
+      products_service: https://api-gateway-feature-5.ab-inbev.cn/products-service/
+    #静态token
+    STATIC_TOKEN:
+      bees_console_token_abi: f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9
+      bees_console_token_t1: 1c03c590-c471-4b97-b789-5ddeb658c18f
+      bees_console_token_t2: be1ad4eb-843f-43b1-bc2f-17f1f36f6482
+      bees_m1_token: 79da3a81-25b5-430d-8054-96f47b867e2e
+    #动态token
+    DYNAMIC_TOKEN:
+      bees_console_token_abi:
+        PHONE: 18838989502
+        SMSCODE: 123456
+      bees_console_token_t1:
+        PHONE: 18838989500
+        SMSCODE: 123456
+      bees_console_token_t2:
+        PHONE: 17353360016
+        SMSCODE: 123456
+    #数据库连接
+    MYSQL_CONNECT:
+      HOST: rm-uf6t3m8yo40d5b905go.mysql.rds.aliyuncs.com
+      USER: un_zhaoyawei
+      PASSWD: zhaoyawei@123
+      PORT: 3306
+
+#------------------------------------------------------------------------------------------------------------
+#中台项目
+PROJECT_MP:
+  #dev环境
+  ENVIRONMENT_DEV:
+    #url
+    BASE_URL:
+      mp_user_service: https://cn-api-gateway-dev.ab-inbev.cn/abi-cloud-middle-platform-user-service/
+      mp_base_url: https://cn-api-gateway-dev.ab-inbev.cn/
+    #静态token
+    STATIC_TOKEN:
+      mp_console_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbklkIjoxMjY1Miwicm4iOiIzdHJWODdVSjhqaUtwVEJSbENjTzd4bG5henY4RWRlNSIsImlzcyI6Imh0dHBzOi8vd3d3LmFiLWluYmV2LmNuLyIsInN1YiI6Imh0dHBzOi8vd3d3LmFiLWluYmV2LmNuLyJ9.sRria6H9iIsMi8k7S0lcNvIrvzuTssZYzIHlrOYFkxs
+    #动态token
+    DYNAMIC_TOKEN:
+      mp_console_token:
+        USER_NAME: 78100001
+        PASSWORD: n9vI7$*J
+    #数据库连接
+    MYSQL_CONNECT:
+      HOST: 47.103.167.84
+      USER: srv_mp_aqtest
+      PASSWD: q^ipSOhR%4
+      PORT: 3306
+  #feature-test环境
+  ENVIRONMENT_FEATURE_TEST:
+    #url
+    BASE_URL:
+      mp_user_service: https://cn-api-gateway-feature-test.ab-inbev.cn/abi-cloud-middle-platform-user-service/
+      mp_base_url: https://cn-api-gateway-feature-test.ab-inbev.cn/
+      #静态token
+    STATIC_TOKEN:
+      mp_console_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbklkIjoxMjY1Miwicm4iOiIzdHJWODdVSjhqaUtwVEJSbENjTzd4bG5henY4RWRlNSIsImlzcyI6Imh0dHBzOi8vd3d3LmFiLWluYmV2LmNuLyIsInN1YiI6Imh0dHBzOi8vd3d3LmFiLWluYmV2LmNuLyJ9.sRria6H9iIsMi8k7S0lcNvIrvzuTssZYzIHlrOYFkxs
+    #动态token
+    DYNAMIC_TOKEN:
+      mp_console_token:
+        USER_NAME: 10000001
+        PASSWORD: Rmw@3V#1
+    #数据库连接
+    MYSQL_CONNECT:
+      HOST: rm-uf6t3m8yo40d5b905go.mysql.rds.aliyuncs.com
+      USER: srv_mp_aqtest
+      PASSWD: q^ipSOhR%4
+      PORT: 3306
+  #test环境
+  ENVIRONMENT_TEST:
+    #url
+    BASE_URL:
+      mp_user_service: https://cn-api-gateway-test.ab-inbev.cn/abi-cloud-middle-platform-user-service/
+      mp_base_url: https://api-gateway-test.ab-inbev.cn/
+    #静态token
+    STATIC_TOKEN:
+      mp_console_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbklkIjoxMTIzNiwicm4iOiJUcHlBY1lUS0t6RjdhTEpzRzZYaUtTMGRWMXNwTFIweSJ9.ak8AODaXeXlchU-oBrc7mY_mblj_JKrWWqTkHSXixVg
+    #动态token
+    DYNAMIC_TOKEN:
+      mp_console_token:
+        USER_NAME: 28000100
+        PASSWORD: 5&RaSb2%
+    #数据库连接
+    MYSQL_CONNECT:
+      HOST: rm-uf6t3m8yo40d5b905go.mysql.rds.aliyuncs.com
+      USER: srv_mp_aqtest
+      PASSWD: q^ipSOhR%4
+      PORT: 3306
+#
+#
+#
+##基础URL域名：
+#FEATURE_TEST_BASE_URL:
+#  business_entity_service: https://bees-server-feature-test.ab-inbev.cn/business-entity-service/
+#  mp_base_auto: https://cn-api-gateway-feature-test.ab-inbev.cn/
+#  bees_user_service: https://bees-server-feature-test.ab-inbev.cn/
+#
+#DEV_BASE_URL:
+#  business_entity_service: https://bees-server-dev.ab-inbev.cn/business-entity-service/
+#  mp_base_auto: https://cn-api-gateway-dev.ab-inbev.cn/
+#  bees_user_service: https://bees-server-dev.ab-inbev.cn/
+
+#
+##静态token：
+#BEES_FEATURE_TEST_TOKEN:
+#  bees_console_token_abi: 22cb393b-e611-45b7-90a1-2a809621317a
+#  bees_console_token_t1: c34e0f12-c6f9-4600-a93b-210f6374f61b
+#  bees_console_token_t2: 78bba925-21ae-43ab-b922-b67b528099a8
+#  bees_m1_token: 79da3a81-25b5-430d-8054-96f47b867e2e
+#
+#BEES_DEV_TOKEN:
+#  bees_console_token_abi: b49c8758-b622-4217-8837-b219e3279da8
+#  bees_console_token_t1: 98759403-d6d7-43e3-82ee-3857e4861c88
+#  bees_console_token_t2: e4afa29d-1d0e-4297-9038-a7b021fb2b3f
+#  bees_m1_token: 79da3a81-25b5-430d-8054-96f47b867e2e
+
+##动态账号
+#BEES_DEV_ACCOUNT:
+#  bees_console_token_abi:
+#    PHONE: 18838989502
+#    SMSCODE: 123456
+#  bees_console_token_t1:
+#    PHONE: 18838989500
+#    SMSCODE: 123456
+#  bees_console_token_t2:
+#    PHONE: 17353360016
+#    SMSCODE: 123456
+
+#BEES_FEATURE_TEST_ACCOUNT:
+#  bees_console_token_abi:
+#    userNameOrPhone: WesleyYuan
+#    password: WelCome2021%
+#  bees_console_token_t1:
+#    userNameOrPhone: test002
+#    password: Aa123456.
+#  bees_console_token_t2:
+#    userNameOrPhone: 2Ttest002
+#    password: Aa123456.
+
+
+#
+##获取中台DEV环境token的账号密码：
+#MP_DEV_CONSOLE_TOKEN:
+#  USER_NAME: 78100001
+#  PASSWORD: n9vI7$*J
+#
+##获取中台TEST环境token的账号密码：
+#MP_TEST_CONSOLE_TOKEN:
+#  USER_NAME: 28000100
+#  PASSWORD: 5&RaSb2%
+#
+##获取中台feature-2环境token的账号密码：
+#MP_FEATURE2_CONSOLE_TOKEN:
+#  USER_NAME: 78100001
+#  PASSWORD: n9vI7$*J
+#
+##获取中台feature-test环境token的账号密码：
+#MP_FEATURE_TEST_CONSOLE_TOKEN:
+#  USER_NAME: 10000001
+#  PASSWORD: Rmw@3V#1
+#
+#
+##数据库连接：
+#MYSQL_MP:
+#  HOST: rm-uf6t3m8yo40d5b905go.mysql.rds.aliyuncs.com
+#  USER: srv_mp_aqtest
+#  PASSWD: q^ipSOhR%4
+#  PORT: 3306
+#
+
+MYSQL_XY:
+  HOST: 139.9.2.150
+  USER: root
+  PASSWD: zytbbpzt1@#@X
+  PORT: 3307
+#
+#
+#BASE_URL:
+#  isales_service: http://abi-cloud-middle-platform-poc-service-test.cf56d21c1bce44dcca3b04d4823848fe4.cn-shanghai.alicontainer.com/
+#  message_service: https://api-gateway-test.ab-inbev.cn/
+#  products_service: https://bees-server-test.ab-inbev.cn/
+#  business_entity_service: https://bees-server-feature-test.ab-inbev.cn/business-entity-service/
+#  bees-dev: https://bees-server-dev.ab-inbev.cn/
+#  mp_user_test: https://api-gateway-test.ab-inbev.cn/abi-cloud-middle-platform-user-service/
+#  mp_user_dev: https://api-gateway-dev.ab-inbev.cn/abi-cloud-middle-platform-user-service/
+#  mp_base_auto: https://cn-api-gateway-feature-test.ab-inbev.cn/
