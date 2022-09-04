@@ -10,12 +10,11 @@ execnet==1.9.0
 Faker==13.3.3
 idna==3.3
 iniconfig==1.1.1
-jsonpath==0.82
+jsonpath
 mysql-connector==2.2.9
-numpy==1.21.0
 openpyxl==3.0.9
 packaging==21.3
-pandas==1.1.5
+pandas
 pluggy==1.0.0
 py==1.11.0
 pycryptodome==3.14.1

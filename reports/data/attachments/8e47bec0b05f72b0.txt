@@ -1,4 +1,0 @@
-[32mINFO    [0m logger:logging_util.py:45 --------------接口测试开始--------------
-[32mINFO    [0m logger:logging_util.py:45 用例标题：商品单位删除
-[31m[1mERROR   [0m logger:logging_util.py:40 'category_id'转换全局变量的数据类型read_extract_data_int异常
-[31m[1mERROR   [0m logger:logging_util.py:40 'category_id'转换全局变量的数据类型read_extract_data_int异常封装替换数据replace_value异常

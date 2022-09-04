@@ -1,5 +1,0 @@
-测试结果：通过
-响应状态码：200
-响应时间：0.051201秒
-请求类型：GET 
-接口地址：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/queryProductsUnit
