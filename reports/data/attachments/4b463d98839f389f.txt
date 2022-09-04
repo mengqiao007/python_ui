@@ -1,0 +1,19 @@
+[32mINFO    [0m logger:logging_util.py:45 --------------接口测试开始--------------
+[32mINFO    [0m logger:logging_util.py:45 用例标题：商品主品类置顶查询
+[32mINFO    [0m logger:logging_util.py:45 请求方式：GET
+[32mINFO    [0m logger:logging_util.py:45 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/queryProductsCategory
+[32mINFO    [0m logger:logging_util.py:45 请求参数：{'id': 524}
+[32mINFO    [0m logger:logging_util.py:45 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+[32mINFO    [0m logger:logging_util.py:45 实际结果：{'code': 200, 'message': '成功', 'result': [{'id': 524, 'name': 'editCategory434', 'code': '107147', 'sort': 10, 'level': 0, 'parentId': -1, 'parentName': None, 'erpCode': None, 'source': None, 'shopId': None, 'deleted': False, 'createdAt': '2022-08-29 11:37:17', 'createdBy': 1384416613905731585, 'updatedAt': '2022-08-29 11:37:18', 'updatedBy': 1384416613905731585, 'status': 1, 'childList': None}]}
+[32mINFO    [0m logger:logging_util.py:45 响应时间：0.053214秒
+[32mINFO    [0m logger:logging_util.py:45 断言响应码成功
+[32mINFO    [0m logger:logging_util.py:45 断言文本成功
+[32mINFO    [0m logger:logging_util.py:45 断言文本=======预期结果name值：editCategory434
+[32mINFO    [0m logger:logging_util.py:45 断言文本=======实际结果name值：editCategory434
+[32mINFO    [0m logger:logging_util.py:45 sql执行=======语句：SELECT * from products_category WHERE name="editCategory434"
+[32mINFO    [0m logger:logging_util.py:45 sql执行=======结果：[{'id': 524, 'name': 'editCategory434', 'code': '107147', 'sort': 10, 'level': 0, 'parent_id': -1, 'erp_code': None, 'deleted': 0, 'created_at': datetime.datetime(2022, 8, 29, 11, 37, 17), 'created_by': 1384416613905731585, 'updated_at': datetime.datetime(2022, 8, 29, 11, 37, 18), 'updated_by': 1384416613905731585, 'external': 0, 'status': 1}]
+[32mINFO    [0m logger:logging_util.py:45 数据库断言成功
+[32mINFO    [0m logger:logging_util.py:45 数据库断言=======预期结果sort值为：10
+[32mINFO    [0m logger:logging_util.py:45 数据库断言=======实际结果sort值为：10
+[32mINFO    [0m logger:logging_util.py:45 接口测试通过
+[32mINFO    [0m logger:logging_util.py:45 --------------接口测试结束--------------

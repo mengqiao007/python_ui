@@ -1,0 +1,135 @@
+2022/08/26 15:47:36 | logging_util.py | INFO| --------------接口测试开始--------------
+2022/08/26 15:47:36 | logging_util.py | INFO| 用例标题：添加主品牌
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求方式：POST
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/createProductsBrand
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求参数：{'parentId': -1, 'level': 0, 'name': 'addBrand081'}
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+2022/08/26 15:47:36 | logging_util.py | INFO| 实际结果：{'code': 200, 'message': '成功', 'result': True}
+2022/08/26 15:47:36 | logging_util.py | INFO| 响应时间：0.397006秒
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言响应码成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本=======预期结果message值：成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本=======实际结果message值：成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 接口测试通过
+2022/08/26 15:47:36 | logging_util.py | INFO| --------------接口测试结束--------------
+
+2022/08/26 15:47:36 | logging_util.py | INFO| --------------接口测试开始--------------
+2022/08/26 15:47:36 | logging_util.py | INFO| 用例标题：添加主品牌后查询
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求方式：POST
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/queryProductsBrandPage
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求参数：{'name': 'addBrand081', 'current': 1, 'size': 10}
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+2022/08/26 15:47:36 | logging_util.py | INFO| 实际结果：{'code': 200, 'message': '成功', 'result': {'current': 1, 'totalSize': 1, 'list': [{'id': 2138, 'code': '103540', 'name': 'addBrand081', 'level': 0, 'parentId': -1, 'parentName': None, 'deleted': None, 'createdAt': '2022-08-26 15:47:37', 'createdBy': None, 'updatedAt': None, 'updatedBy': None, 'shopId': None, 'source': None, 'status': 1, 'type': 2, 'sapType': 2, 'childList': None, 'sapCode': None, 'sapStatus': None, 'skuCount': 0}]}}
+2022/08/26 15:47:36 | logging_util.py | INFO| 响应时间：0.09667秒
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言响应码成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本=======预期结果name值：addBrand081
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本=======实际结果name值：addBrand081
+2022/08/26 15:47:36 | logging_util.py | INFO| 接口测试通过
+2022/08/26 15:47:36 | logging_util.py | INFO| --------------接口测试结束--------------
+
+2022/08/26 15:47:36 | logging_util.py | INFO| --------------接口测试开始--------------
+2022/08/26 15:47:36 | logging_util.py | INFO| 用例标题：编辑主品牌
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求方式：PUT
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/editProductsBrand
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求参数：{'id': 2138, 'name': 'editBrand081', 'level': 0, 'parentId': -1, 'type': 2}
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+2022/08/26 15:47:36 | logging_util.py | INFO| 实际结果：{'code': 200, 'message': '成功', 'result': True}
+2022/08/26 15:47:36 | logging_util.py | INFO| 响应时间：0.262015秒
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言响应码成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本=======预期结果message值：成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本=======实际结果message值：成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 接口测试通过
+2022/08/26 15:47:36 | logging_util.py | INFO| --------------接口测试结束--------------
+
+2022/08/26 15:47:36 | logging_util.py | INFO| --------------接口测试开始--------------
+2022/08/26 15:47:36 | logging_util.py | INFO| 用例标题：编辑主品牌后查询
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求方式：GET
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/queryProductsBrand
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求参数：{'id': 2138, 'current': 1, 'size': 10}
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+2022/08/26 15:47:36 | logging_util.py | INFO| 实际结果：{'code': 200, 'message': '成功', 'result': [{'id': 2138, 'code': '103540', 'name': 'editBrand081', 'level': 0, 'parentId': -1, 'parentName': None, 'deleted': False, 'createdAt': '2022-08-26 15:47:37', 'createdBy': 1384416613905731585, 'updatedAt': '2022-08-26 15:47:37', 'updatedBy': 1384416613905731585, 'shopId': None, 'source': None, 'status': 1, 'type': 2, 'sapType': None, 'childList': None, 'sapCode': None, 'sapStatus': None, 'skuCount': None}]}
+2022/08/26 15:47:36 | logging_util.py | INFO| 响应时间：0.061406秒
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言响应码成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本成功
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本=======预期结果name值：editBrand081
+2022/08/26 15:47:36 | logging_util.py | INFO| 断言文本=======实际结果name值：editBrand081
+2022/08/26 15:47:36 | logging_util.py | INFO| 接口测试通过
+2022/08/26 15:47:36 | logging_util.py | INFO| --------------接口测试结束--------------
+
+2022/08/26 15:47:36 | logging_util.py | INFO| --------------接口测试开始--------------
+2022/08/26 15:47:36 | logging_util.py | INFO| 用例标题：主品牌停用
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求方式：POST
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/brand/v1/update-brandstatus-by-id
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求参数：{'id': 2138, 'status': 0}
+2022/08/26 15:47:36 | logging_util.py | INFO| 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+2022/08/26 15:47:37 | logging_util.py | INFO| 实际结果：{'code': 200, 'data': None, 'message': '操作成功', 'time': '2022-08-26 15:47:37'}
+2022/08/26 15:47:37 | logging_util.py | INFO| 响应时间：0.16018秒
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言响应码成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本=======预期结果message值：操作成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本=======实际结果message值：操作成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 接口测试通过
+2022/08/26 15:47:37 | logging_util.py | INFO| --------------接口测试结束--------------
+
+2022/08/26 15:47:37 | logging_util.py | INFO| --------------接口测试开始--------------
+2022/08/26 15:47:37 | logging_util.py | INFO| 用例标题：主品牌停用后查询
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求方式：POST
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/queryProductsBrandPage
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求参数：{'name': 'editBrand081', 'current': 1, 'size': 10}
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+2022/08/26 15:47:37 | logging_util.py | INFO| 实际结果：{'code': 200, 'message': '成功', 'result': {'current': 1, 'totalSize': 1, 'list': [{'id': 2138, 'code': '103540', 'name': 'editBrand081', 'level': 0, 'parentId': -1, 'parentName': None, 'deleted': None, 'createdAt': '2022-08-26 15:47:37', 'createdBy': None, 'updatedAt': None, 'updatedBy': None, 'shopId': None, 'source': None, 'status': 0, 'type': 2, 'sapType': 2, 'childList': None, 'sapCode': None, 'sapStatus': None, 'skuCount': 0}]}}
+2022/08/26 15:47:37 | logging_util.py | INFO| 响应时间：0.070559秒
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言响应码成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本=======预期结果status值：0
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本=======实际结果status值：0
+2022/08/26 15:47:37 | logging_util.py | INFO| 接口测试通过
+2022/08/26 15:47:37 | logging_util.py | INFO| --------------接口测试结束--------------
+
+2022/08/26 15:47:37 | logging_util.py | INFO| --------------接口测试开始--------------
+2022/08/26 15:47:37 | logging_util.py | INFO| 用例标题：删除主品牌
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求方式：PUT
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/deleteProductsBrand
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求参数：{'id': 2138}
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+2022/08/26 15:47:37 | logging_util.py | INFO| 实际结果：{'code': 200, 'message': '成功', 'result': 1}
+2022/08/26 15:47:37 | logging_util.py | INFO| 响应时间：0.080752秒
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言响应码成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本=======预期结果result值：1
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本=======实际结果result值：1
+2022/08/26 15:47:37 | logging_util.py | INFO| 接口测试通过
+2022/08/26 15:47:37 | logging_util.py | INFO| --------------接口测试结束--------------
+
+2022/08/26 15:47:37 | logging_util.py | INFO| --------------接口测试开始--------------
+2022/08/26 15:47:37 | logging_util.py | INFO| 用例标题：删除主品牌后查询
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求方式：POST
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/queryProductsBrandPage
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求参数：{'name': 'editBrand081', 'current': 1, 'size': 10}
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+2022/08/26 15:47:37 | logging_util.py | INFO| 实际结果：{'code': 200, 'message': '成功', 'result': {'current': 1, 'totalSize': 0, 'list': []}}
+2022/08/26 15:47:37 | logging_util.py | INFO| 响应时间：0.057863秒
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言响应码成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本=======预期结果totalSize值：0
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本=======实际结果totalSize值：0
+2022/08/26 15:47:37 | logging_util.py | INFO| 接口测试通过
+2022/08/26 15:47:37 | logging_util.py | INFO| --------------接口测试结束--------------
+
+2022/08/26 15:47:37 | logging_util.py | INFO| --------------接口测试开始--------------
+2022/08/26 15:47:37 | logging_util.py | INFO| 用例标题：树形结构下拉框数据
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求方式：GET
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/queryProductsBrandTreeNode
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求参数：{'name': '百威'}
+2022/08/26 15:47:37 | logging_util.py | INFO| 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+2022/08/26 15:47:37 | logging_util.py | INFO| 实际结果：{'code': 200, 'message': '成功', 'result': [{'id': 2073, 'code': '102541', 'name': 'bees长沙百威', 'level': 0, 'parentId': -1, 'parentName': None, 'deleted': False, 'createdAt': '2022-06-14 09:27:12', 'createdBy': 1384416613905731585, 'updatedAt': '2022-06-14 09:27:31', 'updatedBy': 1384416613905731585, 'shopId': None, 'source': None, 'status': 1, 'type': 2, 'sapType': None, 'childList': [{'id': 2074, 'code': '102479', 'name': '长沙百威纯生', 'level': 1, 'parentId': 2073, 'parentName': 'bees长沙百威', 'deleted': False, 'createdAt': '2022-06-14 09:28:47', 'createdBy': 1384416613905731585, 'updatedAt': '2022-06-14 09:28:47', 'updatedBy': 1384416613905731585, 'shopId': None, 'source': None, 'status': 1, 'type': 2, 'sapType': None, 'childList': None, 'sapCode': None, 'sapStatus': None, 'skuCount': None}], 'sapCode': None, 'sapStatus': None, 'skuCount': None}]}
+2022/08/26 15:47:37 | logging_util.py | INFO| 响应时间：0.071417秒
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言响应码成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本成功
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本=======预期结果name值：bees长沙百威
+2022/08/26 15:47:37 | logging_util.py | INFO| 断言文本=======实际结果name值：['bees长沙百威', '长沙百威纯生']
+2022/08/26 15:47:37 | logging_util.py | INFO| 接口测试通过
+2022/08/26 15:47:37 | logging_util.py | INFO| --------------接口测试结束--------------
+

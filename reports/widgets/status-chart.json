@@ -1,0 +1,181 @@
+[ {
+  "uid" : "5f979405ccd22e9f",
+  "name" : "主品类停用",
+  "time" : {
+    "start" : 1661744238891,
+    "stop" : 1661744239052,
+    "duration" : 161
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8d4581963bf2edc0",
+  "name" : "编辑主品类查询",
+  "time" : {
+    "start" : 1661744237780,
+    "stop" : 1661744237862,
+    "duration" : 82
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4b6b9018e2943287",
+  "name" : "主品类删除",
+  "time" : {
+    "start" : 1661744239157,
+    "stop" : 1661744239219,
+    "duration" : 62
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9a179511ac5d5c56",
+  "name" : "子品类停用查询",
+  "time" : {
+    "start" : 1661744238680,
+    "stop" : 1661744238753,
+    "duration" : 73
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1034fd01fd3b056b",
+  "name" : "子品类删除",
+  "time" : {
+    "start" : 1661744238756,
+    "stop" : 1661744238815,
+    "duration" : 59
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c7d22383565f057e",
+  "name" : "添加主品类",
+  "time" : {
+    "start" : 1661744237216,
+    "stop" : 1661744237520,
+    "duration" : 304
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "199733ff0e36877a",
+  "name" : "主品类删除查询",
+  "time" : {
+    "start" : 1661744239221,
+    "stop" : 1661744239288,
+    "duration" : 67
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d3f12bb2fd673e00",
+  "name" : "主品类停用查询",
+  "time" : {
+    "start" : 1661744239055,
+    "stop" : 1661744239154,
+    "duration" : 99
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b6ed1303124c532d",
+  "name" : "添加主品类查询",
+  "time" : {
+    "start" : 1661744237528,
+    "stop" : 1661744237607,
+    "duration" : 79
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6e00d61b16c9a348",
+  "name" : "添加子品类查询",
+  "time" : {
+    "start" : 1661744238224,
+    "stop" : 1661744238296,
+    "duration" : 72
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7e6c54ef0fd8e017",
+  "name" : "商品主品类置顶查询",
+  "time" : {
+    "start" : 1661744237966,
+    "stop" : 1661744238119,
+    "duration" : 153
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "40580a5a466764dc",
+  "name" : "添加子品类",
+  "time" : {
+    "start" : 1661744238122,
+    "stop" : 1661744238222,
+    "duration" : 100
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "82c734000b707f5d",
+  "name" : "编辑子品类",
+  "time" : {
+    "start" : 1661744238300,
+    "stop" : 1661744238448,
+    "duration" : 148
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d7a2d4e5492c356d",
+  "name" : "商品主品类置顶",
+  "time" : {
+    "start" : 1661744237864,
+    "stop" : 1661744237963,
+    "duration" : 99
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "56d0bd57cf64ae1c",
+  "name" : "编辑子品类查询",
+  "time" : {
+    "start" : 1661744238450,
+    "stop" : 1661744238512,
+    "duration" : 62
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "345aa7734ae6a151",
+  "name" : "编辑主品类",
+  "time" : {
+    "start" : 1661744237611,
+    "stop" : 1661744237778,
+    "duration" : 167
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "720153453ad64165",
+  "name" : "子品类删除查询",
+  "time" : {
+    "start" : 1661744238818,
+    "stop" : 1661744238888,
+    "duration" : 70
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "63892f58ff78d979",
+  "name" : "子品类停用",
+  "time" : {
+    "start" : 1661744238515,
+    "stop" : 1661744238678,
+    "duration" : 163
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

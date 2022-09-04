@@ -1,0 +1,3762 @@
+{
+	"info": {
+		"_postman_id": "a0949df2-8ea3-4fb7-af94-8ea7b0e8540c",
+		"name": "BEES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "2批经销商管理",
+			"item": [
+				{
+					"name": "2批经销商-编辑(根据经销商id)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1334065882783073873,\r\n    \"wsWechatBizCode\": \"wx5289\",\r\n    \"wsWechatMainName\": \"ccdd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler/second/updateT2Self",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler",
+								"second",
+								"updateT2Self"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Console端售点信用账期管理接口",
+			"item": [
+				{
+					"name": "获取售点的信用账期信息详情-ok",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountType\": 1,\r\n  \"beginDate\": \"2021-03-10\",\r\n  \"borrowerType\": 0,\r\n  \"creditAmount\": 5000000,\r\n  \"creditStatus\": 0,\r\n  \"endDate\": \"2021-03-18\",\r\n  \"id\": 0,\r\n  \"pocId\": 1334065882783074328,\r\n  \"reason\": \"额度提升\",\r\n  \"repaymentDay\": 28,\r\n  \"usedCreditAmount\": 0,\r\n  \"wsId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit?pocId=1334065882783074421",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit"
+							],
+							"query": [
+								{
+									"key": "pocId",
+									"value": "1334065882783074421",
+									"description": "poc_credit_period表"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增售点-经销商的信用账期信息-ok",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountType\": 5,\r\n  \"beginDate\": \"2022-05-26\",\r\n  \"borrowerType\": 0,\r\n  \"creditAmount\": 1880000,\r\n  \"creditStatus\": 0,\r\n  \"endDate\": \"2022-06-26\",\r\n  \"id\": 1334065882783074421,\r\n  \"pocId\": 1334065882783074421,\r\n  \"reason\": \"额度提升测试\",\r\n  \"repaymentDay\": 15,\r\n  \"usedCreditAmount\": 0,\r\n  \"wsId\": 10\r\n}\r\n/*\r\n  \"accountType\": 5,                         账期模式：5-信用 6-月结 7-翻单结\r\n  \"beginDate\": \"2022-05-26\",                开始时间不得早于当前时间\r\n  \"borrowerType\": 0,                        被授信方类型，0：售点，1：T2经销商\t\r\n  \"creditAmount\": 1880000,                  信用额度(单位分),示例值(5000000)\r\n  \"creditStatus\": 0,                        信用账期的状态，0停用，1启用\r\n  \"endDate\": \"2022-06-26\",                  信用结束日期,示例值(2021-03-18)\r\n  \"id\": 1334065882783074421,                POC-信用账期信息关联表主键id\r\n  \"pocId\": 1334065882783074421,             售点id    poc_credit_period表poc_id\r\n  \"reason\": \"额度提升测试\",                  变更原因,示例值(额度提升)\r\n  \"repaymentDay\": 15,                       月结还款日(1-28),示例值(28)\r\n  \"usedCreditAmount\": 0,                    已用信用额度(单位分)默认传0\r\n  \"wsId\": 10                                经销商id     poc表中   wholesaler_id \r\n\r\n  credit_billing_dev==>credit_account\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新售点-经销商的信用账期信息 -ok",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountType\": 5,\r\n  \"beginDate\": \"2022-05-26\",\r\n  \"borrowerType\": 0,\r\n  \"creditAmount\": 1880009,\r\n  \"creditStatus\": 0,\r\n  \"endDate\": \"2022-06-27\",\r\n  \"id\": 1334065882783074421,\r\n  \"pocId\": 1334065882783074421,\r\n  \"reason\": \"额度提升测试\",\r\n  \"repaymentDay\": 15,\r\n  \"usedCreditAmount\": 0,\r\n  \"wsId\": 10\r\n}\r\n\r\n/*\r\n  credit_billing_dev==>credit_account_change_flow\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新售点-经销商的信用账期信息",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountType\": 7,\r\n  \"beginDate\": \"2022-04-26\",\r\n  \"borrowerType\": 0,\r\n  \"creditAmount\": 1880000,\r\n  \"creditStatus\": 0,\r\n  \"endDate\": \"2022-05-26\",\r\n  \"id\": 1334065882783075047,\r\n  \"pocId\": 1334065882783075047,\r\n  \"reason\": \"额度提升测试1\",\r\n  \"repaymentDay\": 15,\r\n  \"usedCreditAmount\": 0,\r\n  \"wsId\": 151\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新售点-经销商的信用账期信息 Copy 2",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountType\": 5,\r\n  \"beginDate\": \"2022-04-26\",\r\n  \"borrowerType\": 0,\r\n  \"creditAmount\": 1990000,\r\n  \"creditStatus\": 0,\r\n  \"endDate\": \"2022-05-26\",\r\n  \"id\": 1,\r\n  \"pocId\": 1,\r\n  \"reason\": \"额度提升测试\",\r\n  \"repaymentDay\": 15,\r\n  \"usedCreditAmount\": 0,\r\n  \"wsId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "信用额度变更记录-ok",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"borrowerId\": 1334065882783074421,\r\n  \"borrowerType\": 0,\r\n  \"creditCoding\": \"2022042615092822111\",\r\n  \"page\": 1,\r\n  \"size\": 10\r\n}\r\n\r\n/*\r\n  credit_billing_dev==>credit_quota_change_record\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit/amountUpdateRecords",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit",
+								"amountUpdateRecords"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取信用账期被授信方（用户）基本信息-ok",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "borrowerId",
+									"value": "1334065882783074294",
+									"type": "text"
+								},
+								{
+									"key": "borrowerType",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit/borrower/info?borrowerId=1334065882783074421&borrowerType=0",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit",
+								"borrower",
+								"info"
+							],
+							"query": [
+								{
+									"key": "borrowerId",
+									"value": "1334065882783074421",
+									"description": "poc_credit_period表"
+								},
+								{
+									"key": "borrowerType",
+									"value": "0",
+									"description": "被授信方类型，0：售点，1：T2经销商"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "T2售点确认-回退信用账期接口",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pocId\": 1334065882783074421,\r\n  \"status\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit/confirmOrRefuseCreditForT2Poc",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit",
+								"confirmOrRefuseCreditForT2Poc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "判断售点是否已存在已启用或者待确认的信用账期-ok",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pocId\": 1334065882783074336,\r\n  \"status\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit/ifExistPocCreditPeriod?pocId=1334065882783074323",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit",
+								"ifExistPocCreditPeriod"
+							],
+							"query": [
+								{
+									"key": "pocId",
+									"value": "1334065882783074323"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取2T经销商的信用账期信息详情-ok",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pocId\": 1334065882783074336,\r\n  \"status\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit/pocCreditPeriodInfoFor2TWs?wsId=1334065882783074899",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit",
+								"pocCreditPeriodInfoFor2TWs"
+							],
+							"query": [
+								{
+									"key": "wsId",
+									"value": "1334065882783074899"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "月结账期的还款日变更记录-ok",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"borrowerId\": 1334065882783074377,\r\n  \"borrowerType\": 0,\r\n  \"creditCoding\": \"2021071613330126067\",\r\n  \"page\": 1,\r\n  \"size\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit/repayDayUpdateRecords",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit",
+								"repayDayUpdateRecords"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "启用-停用-售点的信用账期账号状态-2022年4月27日",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"borrowerType\": 0,\r\n  \"creditAccountNo\": 62509568808222831,\r\n  \"pocId\": 1334065882783074421,\r\n  \"status\": 0,\r\n  \"ws2TId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/credit/updatePocCreditStatus",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"credit",
+								"updatePocCreditStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Console端销售管理接口",
+			"item": [
+				{
+					"name": "分页查询总部信息列表-ok",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/headquarter/paging-by-condition?current=1&size=2",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"headquarter",
+								"paging-by-condition"
+							],
+							"query": [
+								{
+									"key": "current",
+									"value": "1"
+								},
+								{
+									"key": "records[0].abiSalesmanId",
+									"value": "28071985",
+									"disabled": true
+								},
+								{
+									"key": "records[0].abiSalesmanName",
+									"value": "夏",
+									"disabled": true
+								},
+								{
+									"key": "records[0].abiSalesmanPhone",
+									"value": "18521556384",
+									"disabled": true
+								},
+								{
+									"key": "records[0].channel",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "records[0].city",
+									"value": "123123",
+									"disabled": true
+								},
+								{
+									"key": "records[0].detailAddress",
+									"value": "123123",
+									"disabled": true
+								},
+								{
+									"key": "records[0].district",
+									"value": "123123",
+									"disabled": true
+								},
+								{
+									"key": "records[0].fixedTelephone",
+									"value": "13033316666",
+									"disabled": true
+								},
+								{
+									"key": "records[0].headQuarterCode",
+									"value": "20668043523384548",
+									"disabled": true
+								},
+								{
+									"key": "records[0].headQuarterName",
+									"value": "上海花絮大厦1102",
+									"disabled": true
+								},
+								{
+									"key": "records[0].keyPersonName",
+									"value": "ff",
+									"disabled": true
+								},
+								{
+									"key": "records[0].keyPersonPhone",
+									"value": "13033316666",
+									"disabled": true
+								},
+								{
+									"key": "records[0].province",
+									"value": "123123",
+									"disabled": true
+								},
+								{
+									"key": "records[0].salesmanId",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "records[0].salesmanName",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "records[0].salesmanPhone",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "records[0].subChannel",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "分页查询总部信息列表 Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/headquarter/paging-by-condition?current=1&records[0].abiSalesmanId=w0000203&records[0].abiSalesmanName=侯飞侠&records[0].abiSalesmanPhone=15001890289&records[0].channel=夜场&records[0].city=上海市&records[0].detailAddress=菊园新区嘉宝梦之缘景庭东区11&records[0].district=嘉定区&records[0].fixedTelephone=13033316666&records[0].headQuarterCode=20668043523384548&records[0].headQuarterName=上海花絮大厦1102&records[0].keyPersonName=ff&records[0].keyPersonPhone=13033316666&records[0].province=上海市&records[0].salesmanId=33&records[0].salesmanName=侯飞侠&records[0].salesmanPhone=15001890289&records[0].subChannel=量贩KTV&size=10",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"headquarter",
+								"paging-by-condition"
+							],
+							"query": [
+								{
+									"key": "current",
+									"value": "1"
+								},
+								{
+									"key": "records[0].abiSalesmanId",
+									"value": "w0000203"
+								},
+								{
+									"key": "records[0].abiSalesmanName",
+									"value": "侯飞侠"
+								},
+								{
+									"key": "records[0].abiSalesmanPhone",
+									"value": "15001890289"
+								},
+								{
+									"key": "records[0].channel",
+									"value": "夜场"
+								},
+								{
+									"key": "records[0].city",
+									"value": "上海市"
+								},
+								{
+									"key": "records[0].detailAddress",
+									"value": "菊园新区嘉宝梦之缘景庭东区11"
+								},
+								{
+									"key": "records[0].district",
+									"value": "嘉定区"
+								},
+								{
+									"key": "records[0].fixedTelephone",
+									"value": "13033316666"
+								},
+								{
+									"key": "records[0].headQuarterCode",
+									"value": "20668043523384548"
+								},
+								{
+									"key": "records[0].headQuarterName",
+									"value": "上海花絮大厦1102"
+								},
+								{
+									"key": "records[0].keyPersonName",
+									"value": "ff"
+								},
+								{
+									"key": "records[0].keyPersonPhone",
+									"value": "13033316666"
+								},
+								{
+									"key": "records[0].province",
+									"value": "上海市"
+								},
+								{
+									"key": "records[0].salesmanId",
+									"value": "33"
+								},
+								{
+									"key": "records[0].salesmanName",
+									"value": "侯飞侠"
+								},
+								{
+									"key": "records[0].salesmanPhone",
+									"value": "15001890289"
+								},
+								{
+									"key": "records[0].subChannel",
+									"value": "量贩KTV"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "分页查询总部信息列表 Copy 3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/headquarter/paging-by-condition?current=1&records[0].abiSalesmanId=17&records[0].abiSalesmanName=夏&records[0].abiSalesmanPhone=18521556384&records[0].channel=null&records[0].city=123123&records[0].detailAddress=123123&records[0].district=123123&records[0].fixedTelephone=13033316666&records[0].headQuarterCode=20668043523384548&records[0].headQuarterName=上海花絮大厦1102&records[0].keyPersonName=ff&records[0].keyPersonPhone=13033316666&records[0].province=123123&records[0].salesmanId=null&records[0].salesmanName=null&records[0].salesmanPhone=null&records[0].subChannel=null&size=10",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"headquarter",
+								"paging-by-condition"
+							],
+							"query": [
+								{
+									"key": "current",
+									"value": "1"
+								},
+								{
+									"key": "records[0].abiSalesmanId",
+									"value": "17"
+								},
+								{
+									"key": "records[0].abiSalesmanName",
+									"value": "夏"
+								},
+								{
+									"key": "records[0].abiSalesmanPhone",
+									"value": "18521556384"
+								},
+								{
+									"key": "records[0].channel",
+									"value": "null"
+								},
+								{
+									"key": "records[0].city",
+									"value": "123123"
+								},
+								{
+									"key": "records[0].detailAddress",
+									"value": "123123"
+								},
+								{
+									"key": "records[0].district",
+									"value": "123123"
+								},
+								{
+									"key": "records[0].fixedTelephone",
+									"value": "13033316666"
+								},
+								{
+									"key": "records[0].headQuarterCode",
+									"value": "20668043523384548"
+								},
+								{
+									"key": "records[0].headQuarterName",
+									"value": "上海花絮大厦1102"
+								},
+								{
+									"key": "records[0].keyPersonName",
+									"value": "ff"
+								},
+								{
+									"key": "records[0].keyPersonPhone",
+									"value": "13033316666"
+								},
+								{
+									"key": "records[0].province",
+									"value": "123123"
+								},
+								{
+									"key": "records[0].salesmanId",
+									"value": "null"
+								},
+								{
+									"key": "records[0].salesmanName",
+									"value": "null"
+								},
+								{
+									"key": "records[0].salesmanPhone",
+									"value": "null"
+								},
+								{
+									"key": "records[0].subChannel",
+									"value": "null"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "分页条件查询售点信息列表-ok",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/pocs/paging-by-condition?current=1&size=2",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"pocs",
+								"paging-by-condition"
+							],
+							"query": [
+								{
+									"key": "current",
+									"value": "1"
+								},
+								{
+									"key": "records[0].abiSalesmanId",
+									"value": "17",
+									"disabled": true
+								},
+								{
+									"key": "records[0].abiSalesmanName",
+									"value": "夏",
+									"disabled": true
+								},
+								{
+									"key": "records[0].abiSalesmanPhone",
+									"value": "18521556384",
+									"disabled": true
+								},
+								{
+									"key": "records[0].channel",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "records[0].city",
+									"value": "123123",
+									"disabled": true
+								},
+								{
+									"key": "records[0].detailAddress",
+									"value": "123123",
+									"disabled": true
+								},
+								{
+									"key": "records[0].district",
+									"value": "123123",
+									"disabled": true
+								},
+								{
+									"key": "records[0].fixedTelephone",
+									"value": "13033316666",
+									"disabled": true
+								},
+								{
+									"key": "records[0].headQuarterCode",
+									"value": "20668043523384548",
+									"disabled": true
+								},
+								{
+									"key": "records[0].headQuarterName",
+									"value": "上海花絮大厦1102",
+									"disabled": true
+								},
+								{
+									"key": "records[0].keyPersonName",
+									"value": "ff",
+									"disabled": true
+								},
+								{
+									"key": "records[0].keyPersonPhone",
+									"value": "13033316666",
+									"disabled": true
+								},
+								{
+									"key": "records[0].province",
+									"value": "123123",
+									"disabled": true
+								},
+								{
+									"key": "records[0].salesmanId",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "records[0].salesmanName",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "records[0].salesmanPhone",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "records[0].subChannel",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "分页条件查询售点信息列表-Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/pocs/paging-by-condition?current=1&records[0].abiSalesmanId=w0000203&records[0].abiSalesmanName=侯飞侠&records[0].abiSalesmanPhone=15001890289&records[0].channel=夜场&records[0].city=上海市&records[0].detailAddress=菊园新区嘉宝梦之缘景庭东区11&records[0].district=嘉定区&records[0].fixedTelephone=13033316666&records[0].keyPersonName=ff&records[0].keyPersonPhone=13033316666&records[0].province=上海市&records[0].salesmanId=33&records[0].salesmanName=侯飞侠&records[0].salesmanPhone=15001890289&records[0].subChannel=量贩KTV&size=10&records[0].pocId=1002&records[0].code=null&records[0].name=null",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"pocs",
+								"paging-by-condition"
+							],
+							"query": [
+								{
+									"key": "current",
+									"value": "1"
+								},
+								{
+									"key": "records[0].abiSalesmanId",
+									"value": "w0000203"
+								},
+								{
+									"key": "records[0].abiSalesmanName",
+									"value": "侯飞侠"
+								},
+								{
+									"key": "records[0].abiSalesmanPhone",
+									"value": "15001890289"
+								},
+								{
+									"key": "records[0].channel",
+									"value": "夜场"
+								},
+								{
+									"key": "records[0].city",
+									"value": "上海市"
+								},
+								{
+									"key": "records[0].detailAddress",
+									"value": "菊园新区嘉宝梦之缘景庭东区11"
+								},
+								{
+									"key": "records[0].district",
+									"value": "嘉定区"
+								},
+								{
+									"key": "records[0].fixedTelephone",
+									"value": "13033316666"
+								},
+								{
+									"key": "records[0].keyPersonName",
+									"value": "ff"
+								},
+								{
+									"key": "records[0].keyPersonPhone",
+									"value": "13033316666"
+								},
+								{
+									"key": "records[0].province",
+									"value": "上海市"
+								},
+								{
+									"key": "records[0].salesmanId",
+									"value": "33"
+								},
+								{
+									"key": "records[0].salesmanName",
+									"value": "侯飞侠"
+								},
+								{
+									"key": "records[0].salesmanPhone",
+									"value": "15001890289"
+								},
+								{
+									"key": "records[0].subChannel",
+									"value": "量贩KTV"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "records[0].pocId",
+									"value": "1002"
+								},
+								{
+									"key": "records[0].code",
+									"value": "null"
+								},
+								{
+									"key": "records[0].name",
+									"value": "null"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "根据工号分页查询售点列表-2022年4月27日",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/pocs/paging-by-salesmanid?salesmanId=28065284",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"pocs",
+								"paging-by-salesmanid"
+							],
+							"query": [
+								{
+									"key": "current",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "salesmanId",
+									"value": "28065284"
+								},
+								{
+									"key": "records[0].abiSalesmanName",
+									"value": "侯飞侠",
+									"disabled": true
+								},
+								{
+									"key": "records[0].abiSalesmanPhone",
+									"value": "15001890289",
+									"disabled": true
+								},
+								{
+									"key": "records[0].channel",
+									"value": "夜场",
+									"disabled": true
+								},
+								{
+									"key": "records[0].city",
+									"value": "上海市",
+									"disabled": true
+								},
+								{
+									"key": "records[0].detailAddress",
+									"value": "菊园新区嘉宝梦之缘景庭东区11",
+									"disabled": true
+								},
+								{
+									"key": "records[0].district",
+									"value": "嘉定区",
+									"disabled": true
+								},
+								{
+									"key": "records[0].fixedTelephone",
+									"value": "13033316666",
+									"disabled": true
+								},
+								{
+									"key": "records[0].keyPersonName",
+									"value": "ff",
+									"disabled": true
+								},
+								{
+									"key": "records[0].keyPersonPhone",
+									"value": "13033316666",
+									"disabled": true
+								},
+								{
+									"key": "records[0].province",
+									"value": "上海市",
+									"disabled": true
+								},
+								{
+									"key": "records[0].salesmanId",
+									"value": "33",
+									"disabled": true
+								},
+								{
+									"key": "records[0].salesmanName",
+									"value": "侯飞侠",
+									"disabled": true
+								},
+								{
+									"key": "records[0].salesmanPhone",
+									"value": "15001890289",
+									"disabled": true
+								},
+								{
+									"key": "records[0].subChannel",
+									"value": "量贩KTV",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "records[0].pocId",
+									"value": "1002",
+									"disabled": true
+								},
+								{
+									"key": "records[0].code",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "records[0].name",
+									"value": "null",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "批量调整关系-ok",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"pocIds\": [1334065882783074936,1334065882783075085],\r\n  \"salesmanId\": \"28065284\"\r\n}\r\n\r\n\r\n\r\n/*\r\n\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/relationship/batch",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"relationship",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增销售人员",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"28100017\",\r\n  \"deliveryVolume\": 0,\r\n  \"name\": \"test001\",\r\n  \"phone\": \"13310679645\",\r\n  \"undertakeLogistics\": 0,\r\n  \"warehouseId\": 123456,\r\n  \"wsSalesmanRole\": [\"1\"]\r\n}\r\n\r\n\r\n\r\n/*\r\n\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/salesman/add",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"salesman",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "是否承接物流环节变更校验接口-ok",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/salesman/checkChangeUndertakeLogistics?salesmanId=28065284",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"salesman",
+								"checkChangeUndertakeLogistics"
+							],
+							"query": [
+								{
+									"key": "salesmanId",
+									"value": "28065284"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBu",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/salesman/getBu?employeeCode=28065919",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"salesman",
+								"getBu"
+							],
+							"query": [
+								{
+									"key": "employeeCode",
+									"value": "28065919",
+									"description": "SELECT * FROM salesman_sales_org_ref WHERE bu IS NOT NULL"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "销售人员数据同步中台",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"18893939389\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/salesman/list/sync/mp",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"salesman",
+								"list",
+								"sync",
+								"mp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "分页查询销售人员列表-ok",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/salesman/paging?current=1&size=2",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"salesman",
+								"paging"
+							],
+							"query": [
+								{
+									"key": "current",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "编辑销售人员",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"code\": \"28065284\",\r\n  \"deliveryVolume\": 0,\r\n  \"name\": \"瓢把子的ABI销售\",\r\n  \"phone\": \"13592199575\",\r\n  \"undertakeLogistics\": 0,\r\n  \"warehouseId\": 123456,\r\n  \"wsSalesmanRole\": [\"1\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/salesman/update",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"salesman",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "根据工号或者姓名查询销售员信息列表-ok",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/salesmanList/nameOrCode?param=瓢把子的ABI销售",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"salesmanList",
+								"nameOrCode"
+							],
+							"query": [
+								{
+									"key": "param",
+									"value": "瓢把子的ABI销售"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "条件查询业务员信息-ok",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/salesmen/condition?orgType=1&keyword=28071985",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"salesmen",
+								"condition"
+							],
+							"query": [
+								{
+									"key": "orgType",
+									"value": "1"
+								},
+								{
+									"key": "keyword",
+									"value": "28071985"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询指定经销商下的业务员信息-2022年4月27日",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/salesmanagement/ws/salesman?wsId=12345691",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"salesmanagement",
+								"ws",
+								"salesman"
+							],
+							"query": [
+								{
+									"key": "wsId",
+									"value": "12345691"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-售点信用账期接口",
+			"item": [
+				{
+					"name": "获取售点信用账期信息",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/api/poc/billing/getInfoByPocId/1334065882783074421",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"api",
+								"poc",
+								"billing",
+								"getInfoByPocId",
+								"1334065882783074421"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取售点信用账期信息",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/api/poc/billing/info",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"api",
+								"poc",
+								"billing",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "售点变更管理",
+			"item": [
+				{
+					"name": "售点信息变更记录查询",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/change/1334065882783074421?current=1&size=2",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"change",
+								"1334065882783074421"
+							],
+							"query": [
+								{
+									"key": "current",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "售点变更管理 分页",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/change/paging?current=1&size=2",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"change",
+								"paging"
+							],
+							"query": [
+								{
+									"key": "current",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								},
+								{
+									"key": "pocName",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "售点关键人手机号变更审核-通过",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"applicationRecordId\": 5625,\r\n  \"pocId\": 1334065882783074753,\r\n  \"remark\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/change/pocKeyPersonTelephone/audit/agree",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"change",
+								"pocKeyPersonTelephone",
+								"audit",
+								"agree"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Console端售点商品特殊价格接口",
+			"item": [
+				{
+					"name": "新增商品特殊价格",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"discount\": 0,\r\n  \"invoicePrice\": 14,\r\n  \"pocId\": 1334065882783074421,\r\n  \"productBaseSku\": 1100013,\r\n  \"productSku\": 2210010525\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/products-price",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"products-price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取指定售点的商品特殊价格列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"discount\": 0,\r\n  \"invoicePrice\": 2,\r\n  \"pocId\": 1334065882783074421,\r\n  \"productBaseSku\": 100100147,\r\n  \"productSku\": 2210010525\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/products-price/list-by-id?pocId=1334065882783074421",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"products-price",
+								"list-by-id"
+							],
+							"query": [
+								{
+									"key": "pocId",
+									"value": "1334065882783074421"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除商品特殊价格",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":945\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/products-price?id=946",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"products-price"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "946"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新商品特殊价格",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"discount\": 0,\r\n  \"id\":935,\r\n  \"invoicePrice\": 100,\r\n  \"pocId\": 1334065882783074421,\r\n  \"productBaseSku\": 1100013,\r\n  \"productSku\": 2210010525\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/products-price",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"products-price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "根据条件获取商品特殊价格列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"discount\": 0,\r\n  \"invoicePrice\": 2,\r\n  \"pocId\": 1334065882783074421,\r\n  \"productBaseSku\": 100100147,\r\n  \"productSku\": 2210010525\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/products-price/list-by-condition?status=1&pocId=1334065882783074421",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"products-price",
+								"list-by-condition"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "pocId",
+									"value": "1334065882783074421"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "确认或驳回商品特殊价格",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"opType\": 1,\r\n  \"priceId\": 1100013,\r\n  \"priceIds\": [1100013]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/products-price/confirm-or-reject",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"products-price",
+								"confirm-or-reject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "批量确认或驳回商品特殊价格",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"opType\": 1,\r\n  \"priceId\": 1100013,\r\n  \"priceIds\": [1100013]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/poc/products-price/confirm-or-reject/batch",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"poc",
+								"products-price",
+								"confirm-or-reject",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "关闭总部",
+			"item": [
+				{
+					"name": "总部审核",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"approval\": true,\r\n  \"approvalRemark\": \"test\",\r\n  \"headquarterCode\": 20674983600132242\r\n}\r\n\r\n/*审核通过后无法再次审核，自动化需修改状态\r\n1-待审核，2-审核拒绝，3-审核通过，4-已启用，5-已冻结，6-已关闭*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/approve",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "总部变更管理",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"auditStatus\": 1,\r\n  \"changeTypeList\": [16],\r\n  \"current\": 1,\r\n  \"size\": 2\r\n}\r\n\r\n/*审核通过后无法再次审核，自动化需修改状态\r\n1-待审核，2-审核拒绝，3-审核通过，4-已启用，5-已冻结，6-已关闭*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/changePageList",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"changePageList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "总部详情信息变更记录-ok",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"headquarterId\": \"5540\",\r\n\t\"current\": 1,\r\n\t\"size\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/detailChangePageList",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"detailChangePageList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "导出总部管理列表字段",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"queryCondition\": \"\",\r\n\t\"orgList\": [],\r\n\t\"areaList\": [{\r\n\t\t\"provinceCode\": 110000,\r\n\t\t\"cityCode\": 110100,\r\n\t\t\"districtCode\": 110101\r\n\t}],\r\n\t\"statusReqList\": [1,2,3,4,5,6],\r\n\t\"headquarterType\": [1],\r\n\t\"current\": 1,\r\n\t\"size\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/export",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"export"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "总部账号列表-ok",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"headquarterCode\": \"20675819067758736\", \r\n\t\"current\": 1,\r\n\t\"size\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/headquarterAccountList",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"headquarterAccountList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "总部详情-ok",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"headquarterMainId\": \"ZB20220223000009\",\r\n\t\"headquarterCode\": \"20675819067758736\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/headquarterMainDetail",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"headquarterMainDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "总部管理列表-ok",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"orgList\":[],\"areaList\":[],\"current\":1,\"size\":10}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/headquarterPageList",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"headquarterPageList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "总部信息 审核总部基础信息接口",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"applicationRecordId\": 20743354658324723,\r\n  \"approval\": true,\r\n  \"approvalRemark\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/headquarters/update/approve",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"headquarters",
+								"update",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "总部多账号开启关闭",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"headquarterCode\":\"20675817943621475\",\"moreAccountFlag\":1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/more-account-switch/headquarter",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"more-account-switch",
+								"headquarter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "分店多账号开启关闭",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"headquarterCode\":\"20675817943621475\",\"moreAccountFlag\":1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/more-account-switch/poc",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"more-account-switch",
+								"poc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "分店账号列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"headquarterCode\":\"20675817833465628\",\"current\":1,\"size\":10}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/pocAccountList",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"pocAccountList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "批量调整关系",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"organization\": 0,\r\n  \"pocIds\": [1334065882783072867,1334065882783072849],\r\n  \"salesmanId\": \"28065307\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/relationship/batch",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"relationship",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "根据工号或者姓名查询销售员信息列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"organization\": 0,\r\n  \"pocIds\": [1334065882783072867,1334065882783072849],\r\n  \"salesmanId\": \"28065307\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/salesmanList/nameOrCode?param=侯飞侠",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"salesmanList",
+								"nameOrCode"
+							],
+							"query": [
+								{
+									"key": "param",
+									"value": "侯飞侠"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "解冻总部",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headquarterCode\": 20675817833465628\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/status/un-frozen",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"status",
+								"un-frozen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "冻结总部",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headquarterCode\": 20675817833465628\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/status/frozen",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"status",
+								"frozen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "关闭总部",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"headquarterCode\":\"20674983600132242\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/status/closed",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"status",
+								"closed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "总部信息 审核更換管理员",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"applicationRecordId\": 5535,\r\n  \"approval\": true,\r\n  \"approvalRemark\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/updateAdmin/approve",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"updateAdmin",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "总部信息 审核修改我的信息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"applicationRecordId\": 5535,\r\n  \"approval\": true,\r\n  \"approvalRemark\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/console/headquarter/updateAdmin/approve",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"console",
+								"headquarter",
+								"updateAdmin",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "经销商管理",
+			"item": [
+				{
+					"name": "经销商-查找（根据经销商id）",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "wholesalerId",
+									"value": "1334065882783073868",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler?wholesalerId=1334065882783073868",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler"
+							],
+							"query": [
+								{
+									"key": "wholesalerId",
+									"value": "1334065882783073868"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "经销商管理(分页列表)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"current\": 1,\r\n  \"size\": 10,\r\n  \"wholesalerName\":\"不爱吃葱经销商\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler/paging",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler",
+								"paging"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "经销商-根据经销商名称，经销商类型获取经销商列表 Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"current\": 1,\r\n  \"size\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler/list/byWsNameAndType?wsName=勿删百富ERP同步经销商",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler",
+								"list",
+								"byWsNameAndType"
+							],
+							"query": [
+								{
+									"key": "wsName",
+									"value": "勿删百富ERP同步经销商"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "经销商管理- 付款方代码",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"current\": 1,\r\n  \"size\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler/selectWholesalerBaseList?page=1&size=10&wholesalerPayCode=0030002244",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler",
+								"selectWholesalerBaseList"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "wholesalerPayCode",
+									"value": "0030002244"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "经销商-更新状态（启用-停用）",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"status\": 2, \"wholesalerId\": \"1334065882783073868\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler/updateStatus",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler",
+								"updateStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "经销商-新增",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"discountRate\": 50,\r\n\t\"wholesalerName\": \"test11\",\r\n\t\"wholesalerCode\": \"test001\",\r\n\t\"wholesalerType\": 1,\r\n\t\"wsWechatBizCode\": \"test002\",\r\n\t\"wsWechatMainName\": \"test003\",\r\n\t\"wsAccountName\": \"wutest002\",\r\n\t\"wsTelphoneNum\": \"18954215505\",\r\n\t\"wholesalerRtms\": [{\r\n\t\t\"rtmPattern\": 1\r\n\t}],\r\n\t\"contactsName\": \"test004\",\r\n\t\"contactsTelphoneNum\": \"13310679645\",\r\n\t\"erpType\": 4,\r\n\t\"erpName\": \"\",\r\n\t\"abiSalesmanCode\": \"\",\r\n\t\"wholesalerSalesmanCode\": \"\",\r\n\t\"mallEnabled\": 0,\r\n\t\"creditValidate\": \"\",\r\n\t\"adjustBillingEnabled\": 0,\r\n\t\"minBuyNum\": 1,\r\n\t\"includeDeduction\": 0,\r\n\t\"minDeliveryNum\": null,\r\n\t\"wholesalerOrgStructures\": [{\r\n\t\t\"wholesalerBuId\": 11,\r\n\t\t\"wholesalerRegionId\": 111,\r\n\t\t\"wholesalerAreaId\": 1005,\r\n\t\t\"wholesalerTerritoryId\": 10278\r\n\t}],\r\n\t\"warehouseAddresses\": [],\r\n\t\"wholesalerPayCode\": \"0030002790\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "经销商-编辑(根据经销商id)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": \"1334065882783073892\",\r\n\t\"wsAccountId\": \"1528673713780736002\",\r\n\t\"discountRate\": 50,\r\n\t\"wholesalerName\": \"test编辑001\",\r\n\t\"wholesalerCode\": \"test001\",\r\n\t\"wholesalerType\": 1,\r\n\t\"wsWechatBizCode\": \"test002\",\r\n\t\"wsWechatMainName\": \"bianji\",\r\n\t\"wsAccountName\": \"wutest001\",\r\n\t\"wsTelphoneNum\": \"18954215505\",\r\n\t\"wholesalerRtms\": [{\r\n\t\t\"id\": \"1506\",\r\n\t\t\"deleted\": 0,\r\n\r\n\t\t\"createdBy\": \"1384416613905731585\",\r\n\r\n\t\t\"updatedBy\": \"1384416613905731585\",\r\n\t\t\"wholesalerId\": \"1334065882783073892\",\r\n\t\t\"rtmPattern\": 1,\r\n\t\t\"supplierId\": null,\r\n\t\t\"payToId\": null,\r\n\t\t\"logisticsModel\": 1\r\n\t}],\r\n\t\"contactsName\": \"test004\",\r\n\t\"contactsTelphoneNum\": \"13310679645\",\r\n\t\"erpType\": 4,\r\n\t\"erpName\": \"\",\r\n\t\"parentId\": null,\r\n\t\"abiSalesmanCode\": \"\",\r\n\t\"wholesalerSalesmanCode\": \"\",\r\n\t\"mallEnabled\": 0,\r\n\t\"erpId\": null,\r\n\t\"creditValidate\": \"\",\r\n\t\"adjustBillingEnabled\": 0,\r\n\t\"minBuyNum\": 1,\r\n\t\"includeDeduction\": 0,\r\n\t\"minDeliveryNum\": null,\r\n\t\"wholesalerOrgStructures\": [{\r\n\t\t\"wholesalerBuId\": 11,\r\n\t\t\"wholesalerRegionId\": 111,\r\n\t\t\"wholesalerAreaId\": 1005,\r\n\t\t\"wholesalerTerritoryId\": 10278,\r\n\t\t\"wholesalerId\": \"1334065882783073892\"\r\n\t}],\r\n\t\"status\": 2,\r\n\t\"store\": {\r\n\t\t\"id\": \"737\",\r\n\t\t\"deleted\": 0,\r\n\t\t\"createdAt\": \"2022-05-23 17:46:29\",\r\n\t\t\"createdBy\": \"1384416613905731585\",\r\n\t\t\"updatedAt\": \"2022-05-23 17:46:29\",\r\n\t\t\"updatedBy\": \"1384416613905731585\",\r\n\t\t\"storeCode\": \"1334065882783073892\",\r\n\t\t\"wholesalerId\": \"1334065882783073892\",\r\n\t\t\"storeName\": \"test10\",\r\n\t\t\"storeDetails\": null,\r\n\t\t\"storeLogoUrl\": null\r\n\t},\r\n\t\"wholesalerNameSecond\": null,\r\n\t\"deliveryInfoList\": [],\r\n\t\"officeAddress\": null,\r\n\t\"warehouseAddresses\": [],\r\n\t\"selectWarehouse\": false,\r\n\t\"freezed\": 0,\r\n\t\"creditPeriod\": null,\r\n\t\"creditPeriodInfo\": null,\r\n\t\"rebates\": false,\r\n\t\"wholesalerPayCode\": \"0030002790\",\r\n\t\"wholesalerNameFromMiddle\": \"上海道尔贸易有限公司\",\r\n\t\"commodityAttributeSplitOrder\": 1,\r\n\t\"allocationMethod\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "经销商-删除单个待完善的经销商",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": \"1334065882783073892\",\r\n\t\"wsAccountId\": \"1528673713780736002\",\r\n\t\"discountRate\": 50,\r\n\t\"wholesalerName\": \"test编辑001\",\r\n\t\"wholesalerCode\": \"test001\",\r\n\t\"wholesalerType\": 1,\r\n\t\"wsWechatBizCode\": \"test002\",\r\n\t\"wsWechatMainName\": \"bianji\",\r\n\t\"wsAccountName\": \"wutest001\",\r\n\t\"wsTelphoneNum\": \"18954215505\",\r\n\t\"wholesalerRtms\": [{\r\n\t\t\"id\": \"1506\",\r\n\t\t\"deleted\": 0,\r\n\r\n\t\t\"createdBy\": \"1384416613905731585\",\r\n\r\n\t\t\"updatedBy\": \"1384416613905731585\",\r\n\t\t\"wholesalerId\": \"1334065882783073892\",\r\n\t\t\"rtmPattern\": 1,\r\n\t\t\"supplierId\": null,\r\n\t\t\"payToId\": null,\r\n\t\t\"logisticsModel\": 1\r\n\t}],\r\n\t\"contactsName\": \"test004\",\r\n\t\"contactsTelphoneNum\": \"13310679645\",\r\n\t\"erpType\": 4,\r\n\t\"erpName\": \"\",\r\n\t\"parentId\": null,\r\n\t\"abiSalesmanCode\": \"\",\r\n\t\"wholesalerSalesmanCode\": \"\",\r\n\t\"mallEnabled\": 0,\r\n\t\"erpId\": null,\r\n\t\"creditValidate\": \"\",\r\n\t\"adjustBillingEnabled\": 0,\r\n\t\"minBuyNum\": 1,\r\n\t\"includeDeduction\": 0,\r\n\t\"minDeliveryNum\": null,\r\n\t\"wholesalerOrgStructures\": [{\r\n\t\t\"wholesalerBuId\": 11,\r\n\t\t\"wholesalerRegionId\": 111,\r\n\t\t\"wholesalerAreaId\": 1005,\r\n\t\t\"wholesalerTerritoryId\": 10278,\r\n\t\t\"wholesalerId\": \"1334065882783073892\"\r\n\t}],\r\n\t\"status\": 2,\r\n\t\"store\": {\r\n\t\t\"id\": \"737\",\r\n\t\t\"deleted\": 0,\r\n\t\t\"createdAt\": \"2022-05-23 17:46:29\",\r\n\t\t\"createdBy\": \"1384416613905731585\",\r\n\t\t\"updatedAt\": \"2022-05-23 17:46:29\",\r\n\t\t\"updatedBy\": \"1384416613905731585\",\r\n\t\t\"storeCode\": \"1334065882783073892\",\r\n\t\t\"wholesalerId\": \"1334065882783073892\",\r\n\t\t\"storeName\": \"test10\",\r\n\t\t\"storeDetails\": null,\r\n\t\t\"storeLogoUrl\": null\r\n\t},\r\n\t\"wholesalerNameSecond\": null,\r\n\t\"deliveryInfoList\": [],\r\n\t\"officeAddress\": null,\r\n\t\"warehouseAddresses\": [],\r\n\t\"selectWarehouse\": false,\r\n\t\"freezed\": 0,\r\n\t\"creditPeriod\": null,\r\n\t\"creditPeriodInfo\": null,\r\n\t\"rebates\": false,\r\n\t\"wholesalerPayCode\": \"0030002790\",\r\n\t\"wholesalerNameFromMiddle\": \"上海道尔贸易有限公司\",\r\n\t\"commodityAttributeSplitOrder\": 1,\r\n\t\"allocationMethod\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler?wholesalerId=1334065882783073893",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler"
+							],
+							"query": [
+								{
+									"key": "wholesalerId",
+									"value": "1334065882783073893"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询当前用户权限的二级经销商列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler/allT2WholesalersByCurrentUser",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler",
+								"allT2WholesalersByCurrentUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询所有经销商列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authentoken",
+								"value": "{{bees_dev}}",
+								"type": "text"
+							},
+							{
+								"key": "type",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bees-server-dev.ab-inbev.cn/business-entity-service/wholesaler/allWholesalerlist",
+							"protocol": "https",
+							"host": [
+								"bees-server-dev",
+								"ab-inbev",
+								"cn"
+							],
+							"path": [
+								"business-entity-service",
+								"wholesaler",
+								"allWholesalerlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

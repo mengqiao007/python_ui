@@ -1,0 +1,196 @@
+{
+  "uid" : "5f979405ccd22e9f",
+  "name" : "主品类停用",
+  "fullName" : "projectService.bees_project.test_products_service.TestBeesProject#test_bees_business_entity_service_category",
+  "historyId" : "a5bbaf27fcc93e3cf34a7067f73f43c2",
+  "time" : {
+    "start" : 1661744238891,
+    "stop" : 1661744239052,
+    "duration" : 161
+  },
+  "description" : "主品类停用",
+  "descriptionHtml" : "<p>主品类停用</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1661744237133,
+      "stop" : 1661744237193,
+      "duration" : 60
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1661744237193,
+      "stop" : 1661744237193,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_verify_url",
+    "time" : {
+      "start" : 1661744237194,
+      "stop" : 1661744237194,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "base_config",
+    "time" : {
+      "start" : 1661744237194,
+      "stop" : 1661744237212,
+      "duration" : 18
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "product_fixture",
+    "time" : {
+      "start" : 1661744237212,
+      "stop" : 1661744237215,
+      "duration" : 3
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "主品类停用",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "b91d5a58b3cf8738",
+      "name" : "测试结果",
+      "source" : "b91d5a58b3cf8738.attach",
+      "type" : "text/plain",
+      "size" : 208
+    }, {
+      "uid" : "f9fc6b7a1cd73096",
+      "name" : "响应断言",
+      "source" : "f9fc6b7a1cd73096.attach",
+      "type" : "text/plain",
+      "size" : 106
+    }, {
+      "uid" : "fec2381c4b6e20af",
+      "name" : "响应报文",
+      "source" : "fec2381c4b6e20af.attach",
+      "type" : "text/plain",
+      "size" : 85
+    }, {
+      "uid" : "83b339a614048e25",
+      "name" : "请求报文",
+      "source" : "83b339a614048e25.attach",
+      "type" : "text/plain",
+      "size" : 24
+    }, {
+      "uid" : "8590fcedf1b079e",
+      "name" : "log",
+      "source" : "8590fcedf1b079e.txt",
+      "type" : "text/plain",
+      "size" : 1300
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "Console端api"
+  }, {
+    "name" : "feature",
+    "value" : "console"
+  }, {
+    "name" : "epic",
+    "value" : "BEES-products-service"
+  }, {
+    "name" : "tag",
+    "value" : "category"
+  }, {
+    "name" : "tag",
+    "value" : "products_service"
+  }, {
+    "name" : "tag",
+    "value" : "bees"
+  }, {
+    "name" : "parentSuite",
+    "value" : "projectService.bees_project"
+  }, {
+    "name" : "suite",
+    "value" : "test_products_service"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestBeesProject"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-R4PSB7K8"
+  }, {
+    "name" : "thread",
+    "value" : "25720-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "projectService.bees_project.test_products_service"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "products_service", "category", "bees" ]
+  },
+  "source" : "5f979405ccd22e9f.json",
+  "parameterValues" : [ ]
+}

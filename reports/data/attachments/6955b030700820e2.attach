@@ -1,0 +1,5 @@
+测试结果：通过
+响应状态码：200
+响应时间：0.137173秒
+请求类型：PUT 
+接口地址：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/editProductsCategory

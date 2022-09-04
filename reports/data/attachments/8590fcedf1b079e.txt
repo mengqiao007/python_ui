@@ -1,0 +1,14 @@
+[32mINFO    [0m logger:logging_util.py:45 --------------接口测试开始--------------
+[32mINFO    [0m logger:logging_util.py:45 用例标题：主品类停用
+[32mINFO    [0m logger:logging_util.py:45 请求方式：POST
+[32mINFO    [0m logger:logging_util.py:45 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/category/console/v1/update-status-by-id
+[32mINFO    [0m logger:logging_util.py:45 请求参数：{'id': 524, 'status': 0}
+[32mINFO    [0m logger:logging_util.py:45 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+[32mINFO    [0m logger:logging_util.py:45 实际结果：{'code': 200, 'data': None, 'message': '操作成功', 'time': '2022-08-29 11:37:19'}
+[32mINFO    [0m logger:logging_util.py:45 响应时间：0.153722秒
+[32mINFO    [0m logger:logging_util.py:45 断言响应码成功
+[32mINFO    [0m logger:logging_util.py:45 断言文本成功
+[32mINFO    [0m logger:logging_util.py:45 断言文本=======预期结果message值：操作成功
+[32mINFO    [0m logger:logging_util.py:45 断言文本=======实际结果message值：操作成功
+[32mINFO    [0m logger:logging_util.py:45 接口测试通过
+[32mINFO    [0m logger:logging_util.py:45 --------------接口测试结束--------------

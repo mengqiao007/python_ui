@@ -1,0 +1,1 @@
+{'code': 200, 'message': '成功', 'result': {'current': 1, 'totalSize': 1, 'list': [{'id': 1389, 'name': 'addUnit050', 'code': '102922', 'sort': None, 'deleted': None, 'createdAt': '2022-08-25 16:43:16', 'createdBy': None, 'updatedAt': None, 'updatedBy': None, 'external': False, 'type': 0, 'sapType': 2, 'sapStatus': None, 'sapCode': None, 'source': None, 'status': 1}]}}

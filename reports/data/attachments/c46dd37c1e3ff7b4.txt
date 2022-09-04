@@ -1,0 +1,14 @@
+[32mINFO    [0m logger:logging_util.py:45 --------------接口测试开始--------------
+[32mINFO    [0m logger:logging_util.py:45 用例标题：编辑主品牌
+[32mINFO    [0m logger:logging_util.py:45 请求方式：PUT
+[32mINFO    [0m logger:logging_util.py:45 请求路径：https://api-gateway-dev.ab-inbev.cn/products-service/products/manager/editProductsBrand
+[32mINFO    [0m logger:logging_util.py:45 请求参数：{'id': 2141, 'name': 'editBrand6HW', 'level': 0, 'parentId': -1, 'type': 2}
+[32mINFO    [0m logger:logging_util.py:45 请求头：{'authentoken': 'f4a1093c-ef3d-4887-a4c1-6aaa3bebebe9', 'type': '1'}
+[32mINFO    [0m logger:logging_util.py:45 实际结果：{'code': 200, 'message': '成功', 'result': True}
+[32mINFO    [0m logger:logging_util.py:45 响应时间：0.215248秒
+[32mINFO    [0m logger:logging_util.py:45 断言响应码成功
+[32mINFO    [0m logger:logging_util.py:45 断言文本成功
+[32mINFO    [0m logger:logging_util.py:45 断言文本=======预期结果message值：成功
+[32mINFO    [0m logger:logging_util.py:45 断言文本=======实际结果message值：成功
+[32mINFO    [0m logger:logging_util.py:45 接口测试通过
+[32mINFO    [0m logger:logging_util.py:45 --------------接口测试结束--------------

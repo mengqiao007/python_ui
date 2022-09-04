@@ -1,0 +1,1439 @@
+{
+	"info": {
+		"_postman_id": "bfd7f53a-675a-4e4d-a9c6-ae1948d9de30",
+		"name": "工作流",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "二批买家ignite",
+			"item": [
+				{
+					"name": "发起流程-1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var taskId_a = jsonData.data.taskItems[0].taskAssignees[0].taskId;\r",
+									"pm.environment.get(\"taskId_a\",taskId_a);\r",
+									"console.log(taskId_a);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530_01\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaotest053_01\",\r\n\t\"processDefinitionKey\": \"bees_t2_ignite\",\r\n\t\"submitCode\": \"18284\",\r\n\t\"tips\": {\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000102644\"],\r\n\t\t\"area\": [\"1\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"WS1\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"],\r\n        \"location\":[\"Y\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var taskId_a = jsonData.data.taskItems[0].taskAssignees[0].taskId;\r",
+									"pm.environment.get(\"taskId_a\",taskId_a);\r",
+									"console.log(taskId_a);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530_02\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaotest0530_02\",\r\n\t\"processDefinitionKey\": \"bees_t2_ignite\",\r\n\t\"submitCode\": \"18266\",\r\n\t\"tips\": {\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000102644\"],\r\n\t\t\"area\": [\"1\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"],\r\n        \"location\":[\"N\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var taskId_a = jsonData.data.taskItems[0].taskAssignees[0].taskId;\r",
+									"pm.environment.get(\"taskId_a\",taskId_a);\r",
+									"console.log(taskId_a);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530_03\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaotest0530_03\",\r\n\t\"processDefinitionKey\": \"bees_t2_ignite\",\r\n\t\"submitCode\": \"18321\",\r\n\t\"tips\": {\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000102644\"],\r\n\t\t\"area\": [\"1\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"M2\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"],\r\n        \"location\":[\"Y\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var taskId_a = jsonData.data.taskItems[0].taskAssignees[0].taskId;\r",
+									"pm.environment.get(\"taskId_a\",taskId_a);\r",
+									"console.log(taskId_a);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530_04\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaotest0530_04\",\r\n\t\"processDefinitionKey\": \"bees_t2_ignite\",\r\n\t\"submitCode\": \"18324\",\r\n\t\"tips\": {\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000102644\"],\r\n\t\t\"area\": [\"1\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"WS2\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"],\r\n        \"location\":[\"N\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var taskId_a = jsonData.data.taskItems[0].taskAssignees[0].taskId;\r",
+									"pm.environment.get(\"taskId_a\",taskId_a);\r",
+									"console.log(taskId_a);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530_05\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaotest0530_05\",\r\n\t\"processDefinitionKey\": \"bees_t2_ignite\",\r\n\t\"submitCode\": \"18392\",\r\n\t\"tips\": {\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"湖南顺兴糖酒集团有限公司\"],\r\n\t\t\"channel\":[\"渠道\"],\r\n        \"location\":[\"Y\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var taskId_a = jsonData.data.taskItems[0].taskAssignees[0].taskId;\r",
+									"pm.environment.get(\"taskId_a\",taskId_a);\r",
+									"console.log(taskId_a);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530_06\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaotest0530_06\",\r\n\t\"processDefinitionKey\": \"bees_t2_ignite\",\r\n\t\"submitCode\": \"18380\",\r\n\t\"tips\": {\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"WS1\"],\r\n\t\t\"wholeIds\":[\"湖南顺兴糖酒集团有限公司\"],\r\n\t\t\"channel\":[\"渠道\"],\r\n        \"location\":[\"N\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var taskId_a = jsonData.data.taskItems[0].taskAssignees[0].taskId;\r",
+									"pm.environment.get(\"taskId_a\",taskId_a);\r",
+									"console.log(taskId_a);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530_07\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaotest0530_07\",\r\n\t\"processDefinitionKey\": \"bees_t2_ignite\",\r\n\t\"submitCode\": \"18378\",\r\n\t\"tips\": {\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"湖南顺兴糖酒集团有限公司\"],\r\n\t\t\"channel\":[\"渠道\"],\r\n        \"location\":[\"Y\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-8",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var taskId_a = jsonData.data.taskItems[0].taskAssignees[0].taskId;\r",
+									"pm.environment.get(\"taskId_a\",taskId_a);\r",
+									"console.log(taskId_a);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530_08\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaotest0530_08\",\r\n\t\"processDefinitionKey\": \"bees_t2_ignite\",\r\n\t\"submitCode\": \"18376\",\r\n\t\"tips\": {\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"WS1\"],\r\n\t\t\"wholeIds\":[\"湖南顺兴糖酒集团有限公司\"],\r\n\t\t\"channel\":[\"渠道\"],\r\n        \"location\":[\"N\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "任务审批",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"taskItems\": [\r\n    {\r\n      \"assigneeCode\": \"113063\",\r\n      \"comment\": \"同意-test-8\",\r\n      \"isApprove\": true,\r\n      \"taskId\": \"24aba288dfe711ec8d94c23a40df6af5\"\r\n    }\r\n    \r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/completeTask",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"completeTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查看详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessKey\": \"测试测试一下\",\r\n  \"processDefinitionKey\": \"bees_t2_ignite\"\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/queryApprovalProcessTwo",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"queryApprovalProcessTwo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "二批买家信息变更",
+			"item": [
+				{
+					"name": "发起流程-1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-11-01\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-01\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18324\",\r\n\t\"tips\": {\r\n        \"field\":[\"1\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"WS2\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-11-02\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-02\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18266\",\r\n\t\"tips\": {\r\n        \"field\":[\"1\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-11-03\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-03\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18284\",\r\n\t\"tips\": {\r\n        \"field\":[\"2\",\"3\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"WS1\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-11-04\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-04\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18321\",\r\n\t\"tips\": {\r\n        \"field\":[\"3\",\"4\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"M2\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-5",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-12-5\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-5\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18266\",\r\n\t\"tips\": {\r\n        \"field\":[\"7\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-6",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-12-06\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-06\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18321\",\r\n\t\"tips\": {\r\n        \"field\":[\"7\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"M2\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-7",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-12-07\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-07\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18284\",\r\n\t\"tips\": {\r\n        \"field\":[\"8\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-8",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-12-08\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-08\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18324\",\r\n\t\"tips\": {\r\n        \"field\":[\"8\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"WS2\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-9 同时命中多条规则",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-11-09\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-09\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18266\",\r\n\t\"tips\": {\r\n        \"field\":[\"1\",\"2\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-9 同时命中多条规则 Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0531-6-05\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0531-2-01\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18266\",\r\n\t\"tips\": {\r\n        \"field\":[\"3\",\"7\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-10",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-16-10\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-10\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18392\",\r\n\t\"tips\": {\r\n        \"field\":[\"1\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-11",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-11-11\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-11\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18380\",\r\n\t\"tips\": {\r\n        \"field\":[\"2\",\"3\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-12",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-12-12\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-12\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18380\",\r\n\t\"tips\": {\r\n        \"field\":[\"7\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"WS1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-13",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-11-13\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-13\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18392\",\r\n\t\"tips\": {\r\n        \"field\":[\"8\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-14 同时命中多条-中区-河西三部",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-15-1414\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-1414\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18392\",\r\n\t\"tips\": {\r\n        \"field\":[\"1\",\"2\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-14 同时命中多条-中区-河西三部 Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest-8-05\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest-2-01\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18392\",\r\n\t\"tips\": {\r\n        \"field\":[\"8\",\"7\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-15",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-12-14\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-14\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18378\",\r\n\t\"tips\": {\r\n        \"field\":[\"1\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-16",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-11-15\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-15\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18376\",\r\n\t\"tips\": {\r\n        \"field\":[\"2\",\"4\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"WS1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-17",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-12-117\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-17\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18376\",\r\n\t\"tips\": {\r\n        \"field\":[\"7\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"WS1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-18",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-11-18\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-18\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18378\",\r\n\t\"tips\": {\r\n        \"field\":[\"8\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-19 同时命中多条-中区-河东三部",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-1-19\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-19\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"11518\",\r\n\t\"tips\": {\r\n        \"field\":[\"1\",\"3\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-19 同时命中多条-中区-河东三部 Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest-7-5\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000104662\",\r\n\t\t\"region\": \"0000105135\",\r\n\t\t\"area\": \"0000105155\",\r\n\t\t\"territory\": \"0000104902\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-19\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18378\",\r\n\t\"tips\": {\r\n        \"field\":[\"3\",\"7\"],\r\n\t\t\"bu\": [\"0000104662\"],\r\n\t\t\"region\": [\"0000105135\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"0000104902\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-20",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest0530-11-20\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-20\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18378\",\r\n\t\"tips\": {\r\n        \"field\":[\"5\",\"6\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"WS2\"],\r\n\t\t\"wholeIds\":[\"1334065882783074163\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "任务审批",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"taskItems\": [\r\n    {\r\n      \"assigneeCode\": \"18344\",\r\n      \"comment\": \"变更同意-test-31-2-1\",\r\n      \"isApprove\": true,\r\n      \"taskId\": \"5f0b723fe7c211ecac3e027f81a61b97\"\r\n    }\r\n    \r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/completeTask",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"completeTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查看详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessKey\": \"96c0d358f81643088501058fe7d015f8\",\r\n  \"processDefinitionKey\": \"bees_t2_info_change\"\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/queryApprovalProcessTwo",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"queryApprovalProcessTwo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "1",
+			"item": [
+				{
+					"name": "发起流程-1 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var taskId_a = jsonData.data.taskItems[0].taskAssignees[0].taskId;\r",
+									"pm.environment.get(\"taskId_a\",taskId_a);\r",
+									"console.log(taskId_a);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"businessKey\": \"qiaoTest--9\",\r\n\t\"businessMap\": {\r\n        \"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000106471\",\r\n\t\t\"region\": \"0000102644\",\r\n\t\t\"area\": \"1\",\r\n\t\t\"territory\": \"1\"\r\n\t},\r\n\t\"businessName\": \"qiaoTest0530-2-09\",\r\n\t\"processDefinitionKey\": \"bees_t2_info_change\",\r\n\t\"submitCode\": \"18266\",\r\n\t\"tips\": {\r\n        \"field\":[\"8\"],\r\n\t\t\"bu\": [\"0000106471\"],\r\n\t\t\"region\": [\"0000105155\"],\r\n\t\t\"area\": [\"0000105155\"],\r\n\t\t\"territory\": [\"1\"],\r\n\t\t\"applicant\": [\"M1\"],\r\n\t\t\"wholeIds\":[\"经销商ID\"],\r\n\t\t\"channel\":[\"渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "发起流程-1 Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var taskId_a = jsonData.data.taskItems[0].taskAssignees[0].taskId;\r",
+									"pm.environment.get(\"taskId_a\",taskId_a);\r",
+									"console.log(taskId_a);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\t\"businessKey\": \"xiuping779\",\r\n\t\"businessMap\": {\r\n\t\t\"wsName\": \"wsName\",\r\n\t\t\"salesmanName\": \"业务员\",\r\n\t\t\"provinceCode\": \"provinceCode\",\r\n\t\t\"cityCode\": \"cityCode\",\r\n\t\t\"districtCode\": \"districtCode\",\r\n\t\t\"bu\": \"0000100004\",\r\n\t\t\"region\": \"0000100026\",\r\n\t\t\"area\": \"0000102906\",\r\n\t\t\"territory\": \"0000105526\"\r\n\t},\r\n\t\"businessName\": \"账单申请\",\r\n\t\"processDefinitionKey\": \"bees_credit_apply\",\r\n\t\"submitCode\": \"11517\",\r\n\t\"tips\": {\r\n\t\t\"bu\": [\"0000100004\"],\r\n\t\t\"region\": [\"0000100026\"],\r\n\t\t\"area\": [\"0000102906\"],\r\n\t\t\"territory\": [\"0000105526\"],\r\n\t\t\"applicant\": [\"WS1\"],\r\n\t\t\"wholeIds\":[\"九江御宴福商贸有限公司\"],\r\n\t\t\"channel\":[\"传统渠道\"]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/startProcessInstance",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"startProcessInstance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "任务审批",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"taskItems\": [\r\n    {\r\n      \"assigneeCode\": \"111111\",\r\n      \"comment\": \"变更同意-test-a\",\r\n      \"isApprove\": true,\r\n      \"taskId\": \"8943b501e57611ec8fd746d342cdf41c\"\r\n    },\r\n    {\r\n      \"assigneeCode\": \"222222\",\r\n      \"comment\": \"变更同意-test-a\",\r\n      \"isApprove\": true,\r\n      \"taskId\": \"9fac0340e21a11ecb6d966e5f722e324\"\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/completeTask",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"completeTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查看详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessKey\": \"qiaoTest--1\",\r\n  \"processDefinitionKey\": \"bees_t2_info_change\"\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/queryApprovalProcessTwo",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"queryApprovalProcessTwo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "审批流程列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"processStatus\": 4,\r\n  \"userId\": \"18357\"\r\n}"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/query-process",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"query-process"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "任务审批 Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n    \"taskItems\": [\r\n        {\r\n        \"assigneeCode\": \"1235\",\r\n        \"comment\": \"变更同意-test-101\",\r\n        \"isApprove\": true,\r\n        \"taskId\": \"32f481e9e61111ecac3e027f81a61b97\"\r\n        }\r\n    ]\r\n    }"
+						},
+						"url": {
+							"raw": "{{DAG_TEST_URL}}/middle/workflow/completeTask",
+							"host": [
+								"{{DAG_TEST_URL}}"
+							],
+							"path": [
+								"middle",
+								"workflow",
+								"completeTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "刷标签",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Budtech/DAG/人员标签导入demo(1).xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://abi-cloud-middle-platform-user-service-server-test.cf56d21c1bce44dcca3b04d4823848fe4.cn-shanghai.alicontainer.com/abi-cloud-middle-platform-user-service/business/data/sync/user/label/update",
+							"protocol": "http",
+							"host": [
+								"abi-cloud-middle-platform-user-service-server-test",
+								"cf56d21c1bce44dcca3b04d4823848fe4",
+								"cn-shanghai",
+								"alicontainer",
+								"com"
+							],
+							"path": [
+								"abi-cloud-middle-platform-user-service",
+								"business",
+								"data",
+								"sync",
+								"user",
+								"label",
+								"update"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
